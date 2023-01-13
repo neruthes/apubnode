@@ -1,0 +1,11 @@
+Your config file is located at '~/.config/apubnode/apubnode.conf'.
+If it exists, it will be sourced by apubnode.
+So, treat it like shell script.
+
+AVAILABLE OPTIONS:
+
+ENABLE_DEBUG=y
+    Enable debug info logging.
+
+ENABLE_DEBUG=n
+    Disable debug info logging.

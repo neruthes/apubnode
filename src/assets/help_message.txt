@@ -1,0 +1,26 @@
+apubnode (version APPVER)
+
+USAGE:
+
+    $  apubnode  help
+            Show this help message.
+
+    $  apubnode  help  {TOPIC}
+            Get help info for a specific topic.
+            Available topics: config.
+
+    $  apubnode  init
+            Initialize a static website repo at PWD.
+
+    $  apubnode  init  force
+            Initialize a static website repo at PWD, ignoring existing repo.
+
+    $  apubnode  useradd  {USERNAME}
+            // TODO: Create a Person.
+
+
+
+COPYRIGHT:
+
+    Copyright (c) 2023 Neruthes.
+    Published with GNU AGPL 3.0 <https://www.gnu.org/licenses/agpl-3.0.html>.
