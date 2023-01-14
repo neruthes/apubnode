@@ -87,10 +87,14 @@ function add_webfinger_cfp_func() {
     mkdir -p "${fs_prefix}functions/.well-known"
     jspath="${fs_prefix}functions/.well-known/webfinger.js"
     cat $DEST_PREFIX/assets/webfinger.js > "$jspath"
-    info "Installed webfinger.js at '$jspath'"
-    echo '{
-        "version": 1,
-        "include": ["/*"],
-        "exclude": []
-    }' > "${fs_prefix}_routes.json"
+    info "Installed 'webfinger.js' at '$jspath'"
+echo '{
+    "version": 1,
+    "include": ["/*"],
+    "exclude": []
+}' > "${fs_prefix}_routes.json"
+
+    ### Additionally, overwrite the _headers file
+    cat $DEST_PREFIX/assets/cfp_headers.txt > "${fs_prefix}_headers"
+    info "Installed '_headers' at '${fs_prefix}_headers'"
 }

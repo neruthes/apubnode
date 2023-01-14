@@ -1,0 +1,8 @@
+*/index.json
+    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
+
+*/main.json
+    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
+
+*/Person.json
+    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
