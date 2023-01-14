@@ -1,11 +1,15 @@
 {
-	"subject": "acct:neruthes@mypubnode.pages.dev",
-
-	"links": [
-		{
-			"rel": "self",
-			"type": "application/activity+json",
-			"href": "http://mypubnode.pages.dev/u/neruthes/"
-		}
-	]
+    "subject": "acct:neruthes@mypubnode.pages.dev",
+    "links": [
+        {
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html",
+            "href": "http://mypubnode.pages.dev/u/neruthes/"
+        },
+        {
+            "rel": "self",
+            "type": "application/activity+json",
+            "href": "http://mypubnode.pages.dev/u/neruthes/outbox/index.json"
+        }
+    ]
 }
