@@ -9,11 +9,19 @@ function update_user_outbox() {
 function update_user_profile_html() {
     export username="$1"
     export userbasedir="$2"
+
     cat "$tmpldir/profile.html" |
         sed "s|_SITENAME_|$sitename|g" |
         sed "s|_FULLNAME_|$fullname|g" |
         sed "s|_USERNAME_|$username|g" > "$userbasedir/index.html"
-    info "Updated '$userbasedir/index.html'"
+
+    mkdir -p "$userbasedir/status"
+    cat "$tmpldir/status.html" |
+        sed "s|_SITENAME_|$sitename|g" |
+        sed "s|_FULLNAME_|$fullname|g" |
+        sed "s|_USERNAME_|$username|g" > "$userbasedir/status/index.html"
+
+    info "Updated '$userbasedir/status/index.html'"
 }
 
 function rebuild_site_for_user() {
@@ -38,8 +46,7 @@ function rebuild_site_for_user() {
     cat "$tmpldir/profile.css" > "$fs_prefix$path_user/profile.css"
     cat "$tmpldir/status.css" > "$fs_prefix$path_user/status.css"
     cat "$defaulttmpldir/profile.js" > "$fs_prefix$path_user/profile.js"
-    mkdir -p "$userbasedir/status"
-    cat "$tmpldir/status.html" > "$userbasedir/status/index.html"
+    cat "$defaulttmpldir/status.js" > "$fs_prefix$path_user/status.js"
 
     # touch $fs_prefix$path_user/custom-{global,profile}.js
     for jsname in global profile; do

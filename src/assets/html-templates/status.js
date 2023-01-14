@@ -38,7 +38,7 @@ app.renderAction_Create = function (actionItem) {
 
             <div class="tla-Create-footer tla-ANY-footer">
                 <time class="tla-ANY-footer--time" datetime="${actionItem.published}">${actionItem.published.replace('T', ' ').slice(0, 19)}</time>
-                <a class="tla-ANY-footer--permalink" href="./status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.id}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
             </div>
         </div>
     </div>`;
@@ -57,12 +57,13 @@ app.actionObjDidLoad = function () {
     app.ram.actionObj = JSON.parse(actionObjXhr.responseText.trim());
     console.log(app.ram.actionObj);
     //
-    // Render js-profile-timeline region
+    // Render js-status-major region
     //
-    document.querySelector('#js-profile-timeline').innerHTML = app.ram.actionObj.orderedItems.map(function (actionItem) {
-        // const actionInfoObj = {};
-        return app[`renderAction_${actionItem.type}`](actionItem);
-    }).join('\n\n');
+    document.querySelector('#js-status-major').innerHTML = app[`renderAction_${app.ram.actionObj.type}`](app.ram.actionObj);
+    // app.ram.actionObj.orderedItems.map(function (actionItem) {
+    //     // const actionInfoObj = {};
+    //     return 
+    // }).join('\n\n');
 };
 
 app.statusPageStart = function () {
@@ -73,24 +74,30 @@ app.statusPageStart = function () {
         //
         // Render js-status-starting region
         //
-        document.querySelector('#js-status-starting').innerHTML = `<div class="status-starting-inner">
+        document.querySelector('#js-status-starting').innerHTML = `<div class="status-page-starting-inner">
             <div class="padbox-h">
-                <h2 class="profileMajor-name">${person.name}</h2>
-                <aside class="profileMajor-username">@${person.preferredUsername}</aside>
-                <p class="profileMajor-summary">${person.summary}</p>
+                <a class="statusStarting-profileAnchor" href="../">
+                    <span class="statusStarting-name">${person.name}</span>
+                </a>&nbsp;&nbsp;/&nbsp;
+                <span class="statusStarting-hereLabel">This Activity</span>
             </div>
         </div>`;
+        // document.querySelector('#js-status-starting').innerHTML = `<div class="status-starting-inner">
+        //     <div class="padbox-h">
+        //         <h2 class="statusStarting-name">${person.name}</h2>
+        //         <aside class="statusStarting-username">@${person.preferredUsername}</aside>
+        //     </div>
+        // </div>`;
         //
         // Parse URL param
         //
-        const actionItemId = location.search.match(/[&?]id=act-(\d+-\d+.).\w+?.json/)[0].slice(1);
+        const actionItemId = location.search.match(/[&?]id=act-(\d+-\d+.).\w+?.json/)[0].slice(4);
         console.log(actionItemId);
-        return 0;
         //
         // Get status (action)
         //
         window.actionObjXhr = new XMLHttpRequest();
-        actionObjXhr.open('GET', '../activities/main.json');
+        actionObjXhr.open('GET', '../activities/' + actionItemId);
         actionObjXhr.addEventListener('load', app.actionObjDidLoad);
         actionObjXhr.send();
     } catch (error) {

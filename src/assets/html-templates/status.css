@@ -7,27 +7,70 @@
     min-height: 100vh;
 }
 
-.status-page-major {
+.status-page-starting {
     padding: 30px 0px 40px;
     border-bottom: 1px solid #DDD;
 }
 
-.status-page-major .statusMajor-name {
-    font-size: 30px;
-    font-weight: 500;
-    margin: 0px 0px 5px;
-}
-
-.status-page-major .statusMajor-username {
+.status-page-starting-inner {
     font-size: 15px;
-    font-weight: 400;
     color: #666;
-    margin: 0px 0px 10px;
 }
 
-.status-page-major .statusMajor-summary {
+.status-page-starting .statusStarting-profileAnchor {
+    color: inherit;
+}
+
+.status-page-starting .statusStarting-name {
+    font-weight: 500;
+    color: #03C;
+}
+
+.status-page-major {
+    padding: 30px 0px 40px;
+}
+
+.status-page-ending {
+    /* padding: 30px 0px 40px; */
+}
+
+
+
+
+
+
+
+/*************************************************
+Local overrides for timeline elements
+*************************************************/
+.tlAction-ANY {
+    padding: 30px 0 60px;
+}
+
+.tla-ANY-header--actorFullname {
+    font-size: 19px;
+    margin-right: 5px;
+}
+
+.tla-ANY-header--actorUsername {
     font-size: 15px;
-    font-weight: 400;
-    color: #000;
-    margin: 0px 0px 20px;
+    margin-right: 5px;
+}
+
+.tla-ANY-header--actionName {
+    font-size: 15px;
+}
+
+.tla-ANY-content {
+    font-size: 19px;
+    padding: 20px;
+    margin: 40px 0px;
+}
+
+.tla-ANY-footer--time {
+    font-size: 15px;
+}
+
+.tla-ANY-footer--permalink {
+    font-size: 15px;
 }

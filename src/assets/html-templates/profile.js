@@ -38,7 +38,7 @@ app.renderAction_Create = function (actionItem) {
 
             <div class="tla-Create-footer tla-ANY-footer">
                 <time class="tla-ANY-footer--time" datetime="${actionItem.published}">${actionItem.published.replace('T', ' ').slice(0, 19)}</time>
-                <a class="tla-ANY-footer--permalink" href="./status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.id}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
             </div>
         </div>
     </div>`;
@@ -73,7 +73,7 @@ app.profilePageStart = function () {
         //
         // Render js-profile-major region
         //
-        document.querySelector('#js-profile-major').innerHTML = `<div class="profile-major-inner">
+        document.querySelector('#js-profile-major').innerHTML = `<div class="profile-page-major-inner">
             <div class="padbox-h">
                 <h2 class="profileMajor-name">${person.name}</h2>
                 <aside class="profileMajor-username">@${person.preferredUsername}</aside>
