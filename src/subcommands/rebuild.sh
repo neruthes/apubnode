@@ -1,15 +1,13 @@
-#!/bin/bash
-
 source .apubnode/config
 
 # username, content, tolist
 export username="$2"
 
-debug "find $fs_prefix$path_user -mindepth 1 -maxdepth 1 -type d"
-debug "$(find $fs_prefix$path_user -mindepth 1 -maxdepth 1 -type d)"
+debug "list_subdirs_of $fs_prefix$path_user"
+debug "$(list_subdirs_of "$fs_prefix$path_user")"
 
 if [[ -z "$username" ]]; then
-    for userbasedir in $(find $fs_prefix$path_user -mindepth 1 -maxdepth 1 -type d); do
+    for userbasedir in $(list_subdirs_of "$fs_prefix$path_user"); do
         username="$(basename $userbasedir)"
         rebuild_site_for_user "$username"
     done

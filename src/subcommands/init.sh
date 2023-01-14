@@ -1,5 +1,3 @@
-#!/bin/bash
-
 debug "argv[0]: $0"
 debug "argv[1]: $1"
 debug "argv[2]: $2"

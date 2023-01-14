@@ -54,11 +54,11 @@ module.exports = {
             "name": opt.fullname,
             "preferredUsername": opt.username,
             "summary": opt.summary,
-            "inbox": "https://social.example/alicebob/inbox/",
-            "outbox": "https://social.example/alicebob/outbox/index.json",
-            "followers": "https://social.example/alicebob/followers/index.json",
-            "following": "https://social.example/alicebob/following/index.json",
-            "liked": "https://social.example/alicebob/liked/index.json",
+            "inbox": "",
+            "outbox": "",
+            "followers": "",
+            "following": "",
+            "liked": "",
             "publicKey": {
                 "id": profileId + 'public.pem',
                 "owner": profileId,
@@ -66,7 +66,7 @@ module.exports = {
             }
         };
         ['inbox', 'outbox', 'followers', 'following', 'liked'].forEach(function (propname) {
-            obj[propname] = obj.id + propname + '/';
+            obj[propname] = obj.id + propname + '/index.json';
         });
         return obj;
     }

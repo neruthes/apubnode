@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source .apubnode/config
 
 export fullname="$2"
@@ -12,7 +10,7 @@ export summary="$4"
 [[ ! -z "$5" ]] && die "Extra argument found."
 
 export userbasedir="$fs_prefix$path_user/$username"
-mkdir -p "$userbasedir"/{items,activities,followers,following,inbox,outbox,liked}
+initialize_userbasedir "$userbasedir"
 
 
 ### Generate a Keypair

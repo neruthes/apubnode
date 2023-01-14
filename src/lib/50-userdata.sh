@@ -61,3 +61,15 @@ function rebuild_site_for_user() {
     
     update_user_profile_html "$username" "$userbasedir"
 }
+
+
+
+
+
+#
+# And other features...
+#
+function initialize_userbasedir() {
+    userbasedir="$1"
+    mkdir -p "$userbasedir"/{items,activities,followers,following,inbox,outbox,liked}
+}

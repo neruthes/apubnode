@@ -39,6 +39,7 @@ app.renderAction_Create = function (actionItem) {
             <div class="tla-Create-footer tla-ANY-footer">
                 <time class="tla-ANY-footer--time" datetime="${actionItem.published}">${actionItem.published.replace('T', ' ').slice(0, 19)}</time>
                 <a class="tla-ANY-footer--permalink" href="${actorObj.id}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.id}/activities/${actionItem.id.split('/').reverse()[0]}">JSON-LD</a>
             </div>
         </div>
     </div>`;
@@ -78,6 +79,10 @@ app.profilePageStart = function () {
                 <h2 class="profileMajor-name">${person.name}</h2>
                 <aside class="profileMajor-username">@${person.preferredUsername}</aside>
                 <p class="profileMajor-summary">${person.summary}</p>
+                <div class="profileMajor-summary">
+                    <a class="profileMajor-smallAnchor" href="${person.id}outbox/index.json">Outbox</a>
+                    <a class="profileMajor-smallAnchor" href="${person.id}Person.json">Person</a>
+                </div>
             </div>
         </div>`;
         //

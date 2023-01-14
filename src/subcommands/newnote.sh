@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source .apubnode/config
 
 # username, content, tolist

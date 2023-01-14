@@ -39,6 +39,7 @@ app.renderAction_Create = function (actionItem) {
             <div class="tla-Create-footer tla-ANY-footer">
                 <time class="tla-ANY-footer--time" datetime="${actionItem.published}">${actionItem.published.replace('T', ' ').slice(0, 19)}</time>
                 <a class="tla-ANY-footer--permalink" href="${actorObj.id}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.id}activities/${actionItem.id.split('/').reverse()[0]}">JSON-LD</a>
             </div>
         </div>
     </div>`;

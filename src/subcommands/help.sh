@@ -1,5 +1,3 @@
-#!/bin/bash
-
 help_topic="$2"
 if [[ -z "$help_topic" ]]; then
     ### General help

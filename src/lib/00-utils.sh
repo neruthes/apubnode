@@ -12,3 +12,11 @@ function info() {
 function debug() {
     [[ "$ENABLE_DEBUG" == "y" ]] && echo "*  debug   $*"
 }
+
+
+
+
+function list_subdirs_of() {
+    main_dir="$1"
+    find "$main_dir" -mindepth 1 -maxdepth 1 -type d
+}
