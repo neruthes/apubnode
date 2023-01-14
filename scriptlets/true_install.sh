@@ -9,7 +9,7 @@
 # done
 
 
-verbatimdirs="lib subcommands assets"
+verbatimdirs="lib subcommands helpers assets assets/html-templates"
 
 for dir in $verbatimdirs; do
     find "$DEST_PREFIX"/$dir -delete

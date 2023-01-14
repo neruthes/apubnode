@@ -15,8 +15,13 @@ USAGE:
     $  apubnode  init  force
             Initialize a static website repo at PWD, ignoring existing repo.
 
-    $  apubnode  useradd  {USERNAME}
-            // TODO: Create a Person.
+    $  apubnode  useradd  {fullname}  {username}  {summary}
+            Create a Person.
+
+    $  apubnode  newnote  {username}  {tolist}  <<<  {content}
+            Create a new note under the Person.
+            The 'tolist' should be empty or space-delimited list of person URIs.
+            Please feed the actual content from stdin
 
 
 

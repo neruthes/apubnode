@@ -15,4 +15,4 @@ fi
 ###
 ### Initialize some variables which may be changed by config file
 ###
-[[ "$INSTALLATION_MODE" == "local" ]] && ENABLE_DEBUG=y
+ENABLE_DEBUG=n

@@ -1,0 +1,11 @@
+{
+	"subject": "acct:neruthes@127.0.0.1",
+
+	"links": [
+		{
+			"rel": "self",
+			"type": "application/activity+json",
+			"href": "http://127.0.0.1:35588/activitypub/u/neruthes/"
+		}
+	]
+}

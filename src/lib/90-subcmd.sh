@@ -4,5 +4,11 @@ function handle_unknown_subcmd() {
 
 function load_subcmd() {
     subcmd="$1"
-    source "$DEST_PREFIX/subcommands/$subcmd.sh"
+    subcmdpath="$DEST_PREFIX/subcommands/$subcmd.sh"
+    if [[ -e $subcmdpath ]]; then
+        source "$subcmdpath"
+    else
+        ### Unkonwn subcommand
+        handle_unknown_subcmd
+    fi
 }

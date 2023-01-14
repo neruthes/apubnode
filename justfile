@@ -14,3 +14,4 @@ release_check:
 
 release:
     bash scriptlets/release.sh
+

@@ -1,0 +1,35 @@
+.bigpart-for-profilePageMainArea {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+.site-main-content {
+    min-height: 100vh;
+}
+
+.profile-page-major {
+    padding: 30px 0px 40px;
+    border-bottom: 1px solid #DDD;
+}
+.profile-page-major .profileMajor-name {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0px 0px 5px;
+}
+.profile-page-major .profileMajor-username {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    margin: 0px 0px 10px;
+}
+.profile-page-major .profileMajor-summary {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin: 0px 0px 20px;
+}
+
+.profile-page-timeline {
+    padding: 0px;
+    /* border-bottom: 1px solid #DDD; */
+}

@@ -1,0 +1,118 @@
+/*************************************************
+Generic global
+*************************************************/
+* {
+    text-rendering: geometricPrecision;
+    box-sizing: border-box;
+    hyphens: none;
+    font-variant-ligatures: none;
+}
+
+html,
+body {
+    font-family: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    color: #03C;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/*************************************************
+App global
+*************************************************/
+.global-container {}
+
+.bigpart {
+    max-width: 1000px;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.padbox {
+    padding: 30px;
+}
+
+.padbox-h {
+    padding: 0px 30px;
+}
+
+.padbox-v {
+    padding: 30px 0px;
+}
+
+.grand-navbar {
+    background: #FFF;
+    border-bottom: 1px solid #DDD;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+}
+
+.grand-navbar h1 {
+    font-size: 20px;
+}
+
+.firstUnderNavbar {
+    padding-top: 100px;
+}
+
+
+
+
+/*************************************************
+Timeline elements
+*************************************************/
+.tlAction-ANY {
+    border-bottom: 1px solid #DDD;
+    padding: 15px 0;
+}
+
+.tla-ANY-header--actorAnchor {
+    color: #000;
+}
+
+.tla-ANY-header--actorFullname {
+    font-size: 15px;
+    color: #000;
+}
+
+.tla-ANY-header--actorUsername {
+    font-size: 13px;
+    color: #666;
+}
+
+.tla-ANY-header--actionName {
+    font-size: 13px;
+    color: #666;
+}
+
+.tla-ANY-content {
+    font-size: 17px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px 0px;
+}
+
+.tla-ANY-footer--time {
+    font-size: 13px;
+    color: #666;
+}
+.tla-ANY-footer--permalink {
+    font-size: 13px;
+    color: #666;
+    margin-left: 15px;
+}

@@ -1,8 +1,11 @@
 #
 # ApubNode repo config file
 #
-# Treat this file like shell script.
-# Because it will be sourced by the apubnode program sometimes.
+# The syntax is like shell script, but expect no shell evaluation.
+# Always quote with doublequotemark
 #
 
-site_prefix="http://127.0.0.1:35588"
+sitename="Experimental ApubNode Instance"
+http_prefix="http://127.0.0.1:35588/activitypub"
+fs_prefix="activitypub/"
+path_user="u"
