@@ -34,9 +34,12 @@ function rebuild_site_for_user() {
     
     update_user_outbox "$username" "$userbasedir"
     
-    cat "$tmpldir/global.css" > $fs_prefix$path_user/global.css
-    cat "$tmpldir/profile.css" > $fs_prefix$path_user/profile.css
-    cat "$defaulttmpldir/profile.js" > $fs_prefix$path_user/profile.js
+    cat "$tmpldir/global.css" > "$fs_prefix$path_user/global.css"
+    cat "$tmpldir/profile.css" > "$fs_prefix$path_user/profile.css"
+    cat "$tmpldir/status.css" > "$fs_prefix$path_user/status.css"
+    cat "$defaulttmpldir/profile.js" > "$fs_prefix$path_user/profile.js"
+    mkdir -p "$userbasedir/status"
+    cat "$tmpldir/status.html" > "$userbasedir/status/index.html"
 
     # touch $fs_prefix$path_user/custom-{global,profile}.js
     for jsname in global profile; do

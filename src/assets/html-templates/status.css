@@ -1,0 +1,33 @@
+.bigpart-for-statusPageMainArea {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+.site-main-content {
+    min-height: 100vh;
+}
+
+.status-page-major {
+    padding: 30px 0px 40px;
+    border-bottom: 1px solid #DDD;
+}
+
+.status-page-major .statusMajor-name {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0px 0px 5px;
+}
+
+.status-page-major .statusMajor-username {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    margin: 0px 0px 10px;
+}
+
+.status-page-major .statusMajor-summary {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    margin: 0px 0px 20px;
+}
