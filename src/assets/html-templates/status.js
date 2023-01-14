@@ -26,6 +26,7 @@ app.renderAction_Create = function (actionItem) {
     return `<div class="tlAction-ANY tlAction-Create" data-tl-action="Create">
         <div class="padbox-h">
             <div class="tla-Create-header tla-ANY-header">
+                <img class="tla-ANY-avatarImg" src="../../../userimg/avatar/${actorObj.preferredUsername}.png">
                 <a class="tla-ANY-header--actorAnchor" href="${actorObj.id}">
                     <span class="tla-ANY-header--actorFullname">${actorObj.name}</span>
                     <span class="tla-ANY-header--actorUsername">(@${actorObj.preferredUsername})</span></a>&nbsp;

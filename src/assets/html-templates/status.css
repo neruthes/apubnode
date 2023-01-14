@@ -17,6 +17,13 @@
     color: #666;
 }
 
+.tla-ANY-avatarImg {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    transform: translateY(5px);
+}
+
 .status-page-starting .statusStarting-profileAnchor {
     color: inherit;
 }

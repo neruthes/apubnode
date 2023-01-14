@@ -12,6 +12,13 @@
     border-bottom: 1px solid #DDD;
 }
 
+.profile-page-major .profileMajor-avatarImg {
+    border-radius: 100vmax;
+    width: 140px;
+    height: 140px;
+    margin: 0 0 40px;
+}
+
 .profile-page-major .profileMajor-name {
     font-size: 30px;
     font-weight: 500;
