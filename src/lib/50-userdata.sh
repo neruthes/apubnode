@@ -15,6 +15,8 @@ function update_user_profile_html() {
         sed "s|_FULLNAME_|$fullname|g" |
         sed "s|_USERNAME_|$username|g" > "$userbasedir/index.html"
 
+    info "Updated '$userbasedir/index.html'"
+
     mkdir -p "$userbasedir/status"
     cat "$tmpldir/status.html" |
         sed "s|_SITENAME_|$sitename|g" |
@@ -72,4 +74,23 @@ function rebuild_site_for_user() {
 function initialize_userbasedir() {
     userbasedir="$1"
     mkdir -p "$userbasedir"/{items,activities,followers,following,inbox,outbox,liked}
+}
+
+
+
+
+#
+# Play with Cloudflare Pages Functions
+#
+function add_webfinger_cfp_func() {
+    source .apubnode/config
+    mkdir -p "${fs_prefix}functions/.well-known"
+    jspath="${fs_prefix}functions/.well-known/webfinger.js"
+    cat $DEST_PREFIX/assets/webfinger.js > "$jspath"
+    info "Installed webfinger.js at '$jspath'"
+    echo '{
+        "version": 1,
+        "include": ["/*"],
+        "exclude": []
+    }' > "${fs_prefix}_routes.json"
 }

@@ -16,13 +16,13 @@ fi
 
 ### Copy example config file
 MYIP="$(ip route get $DEST | grep -oE 'src [.:0-9a-f]+' | cut -d' ' -f2)"
-cat $DEST_PREFIX/assets/config.example.txt | sed "s|127.0.0.1|$MYIP|g" | > .apubnode/config
+cat "$DEST_PREFIX/assets/config.example.txt" | sed "s|127.0.0.1|$MYIP|g" | > .apubnode/config
 
 source .apubnode/config
 
 ### Initialize webfinger
-mkdir -p $fs_prefix/.well-known
-cat $DEST_PREFIX/assets/webfinger.example.json > $fs_prefix/.well-known/webfinger
+mkdir -p "$fs_prefix/functions/.well-known"
+add_webfinger_cfp_func
 
 
 

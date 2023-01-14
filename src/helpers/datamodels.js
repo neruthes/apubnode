@@ -37,6 +37,7 @@ module.exports = {
             "@context": "https://www.w3.org/ns/activitystreams",
             "type": "Note",
             "id": utils.genDataObjId(opt.username, itemType),
+            "url": utils.genDataObjId(opt.username, itemType),
             "published": process.env.action_datetime,
             "to": utils.processTolist(opt.tolist, opt.username),
             "attributedTo": utils.getUserProfileUrl(opt.username),

@@ -8,6 +8,11 @@
         },
         {
             "rel": "self",
+            "type": "application/ld+json",
+            "href": "http://mypubnode.pages.dev/u/neruthes/Person.json"
+        },
+        {
+            "rel": "self",
             "type": "application/activity+json",
             "href": "http://mypubnode.pages.dev/u/neruthes/outbox/index.json"
         }

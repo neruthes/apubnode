@@ -14,3 +14,5 @@ if [[ -z "$username" ]]; then
 else
     rebuild_site_for_user "$username"
 fi
+
+add_webfinger_cfp_func
