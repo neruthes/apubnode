@@ -38,7 +38,7 @@ module.exports = {
             "type": "Note",
             "id": utils.genDataObjId(opt.username, itemType),
             "url": utils.genDataObjId(opt.username, itemType),
-            "published": process.env.action_datetime,
+            "published": opt.action_datetime,
             "to": utils.processTolist(opt.tolist, opt.username),
             "attributedTo": utils.getUserProfileUrl(opt.username) + 'Person.json',
             "content": fs.readFileSync(opt.content_path).toString().trim()
