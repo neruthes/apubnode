@@ -1,3 +1,13 @@
+function write_default_user_jsonld() {
+    username="$1"
+    userbasedir="$fs_prefix$path_user/$username"
+    dirs="inbox followers following liked"
+    for d in $dirs; do
+        sed "s|(PROFILE_URL)|$site_prefix$path_user/$username/g" $DEST_PREFIX/assets/user_jsonld-$d.index.json > "$userbasedir/$d/index.json"
+        sed "s|(PROFILE_URL)|$site_prefix$path_user/$username/g" $DEST_PREFIX/assets/user_jsonld-$d.main.json > "$userbasedir/$d/main.json"
+    done
+}
+
 function update_user_outbox() {
     export username="$1"
     export userbasedir="$2"

@@ -7,14 +7,12 @@ const siteConfig = utils.parseSiteConfig();
 const personObj = JSON.parse(fs.readFileSync(process.env.userbasedir + '/Person.json'));
 
 const newOutboxObj_index = datamodels.user_outbox_index({
-    id: personObj.id,
-    outbox: personObj.outbox,
+    profileUrl: personObj.url,
     userbasedir: process.env.userbasedir
 }, siteConfig);
 
 const newOutboxObj_main = datamodels.user_outbox_main({
-    id: personObj.id,
-    outbox: personObj.outbox,
+    profileUrl: personObj.url,
     userbasedir: process.env.userbasedir
 }, siteConfig);
 

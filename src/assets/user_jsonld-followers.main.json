@@ -1,0 +1,8 @@
+{
+    "@context": "https://www.w3.org/ns/activitystreams",
+    "id": "(_PROFILE_URL_)followers/main.json",
+    "type": "OrderedCollectionPage",
+    "totalItems": 0,
+    "partOf": "(_PROFILE_URL_)followers/index.json",
+    "orderedItems": []
+}

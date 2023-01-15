@@ -7,11 +7,11 @@ module.exports = {
         // Copied from https://mastodon.world/users/neruthes/outbox
         let obj = {
             "@context": "https://www.w3.org/ns/activitystreams",
-            "id": opt.id,
+            "id": opt.profileUrl + 'outbox/index.json',
             "type": "OrderedCollection",
             "totalItems": 1,
-            "first": opt.id + 'outbox/main.json',
-            "last": opt.id + 'outbox/main.json'
+            "first": opt.profileUrl + 'outbox/main.json',
+            "last": opt.profileUrl + 'outbox/main.json'
         };
         return obj;
     },
@@ -19,10 +19,10 @@ module.exports = {
         // Copied from https://mastodon.world/users/neruthes/outbox?page=true
         let obj = {
             "@context": "https://www.w3.org/ns/activitystreams",
-            "id": opt.id + 'outbox/main.json',
+            "id": opt.profileUrl + 'outbox/main.json',
             "type": "OrderedCollectionPage",
             "prev": null,
-            "partOf": opt.outbox,
+            "partOf": opt.profileUrl + 'outbox/index.json',
             "orderedItems": fs.readdirSync(opt.userbasedir + '/activities').sort().reverse().filter(function (fn) {
                 return fn.match(/^act-\d+-\d+.create.json$/);
             }).map(function (fn) {
@@ -40,18 +40,19 @@ module.exports = {
             "url": utils.genDataObjId(opt.username, itemType),
             "published": process.env.action_datetime,
             "to": utils.processTolist(opt.tolist, opt.username),
-            "attributedTo": utils.getUserProfileUrl(opt.username),
+            "attributedTo": utils.getUserProfileUrl(opt.username) + 'Person.json',
             "content": fs.readFileSync(opt.content_path).toString().trim()
         };
         return obj;
     },
     person: function (opt, config) {
         // Expected opt props: fullname, username, summary
-        profileId = utils.getUserProfileUrl(opt.username);
+        profileUrl = utils.getUserProfileUrl(opt.username);
         let obj = {
             "@context": "https://www.w3.org/ns/activitystreams",
             "type": "Person",
-            "id": profileId,
+            "url": profileUrl,
+            "id": profileUrl + 'Person.json',
             "name": opt.fullname,
             "preferredUsername": opt.username,
             "summary": opt.summary,
@@ -61,13 +62,13 @@ module.exports = {
             "following": "",
             "liked": "",
             "publicKey": {
-                "id": profileId + 'public.pem',
-                "owner": profileId,
+                "id": profileUrl + 'public.pem',
+                "owner": profileUrl + 'Person.json',
                 "publicKeyPem": fs.readFileSync(opt.userbasedir + '/public.pem').toString()
             }
         };
         ['inbox', 'outbox', 'followers', 'following', 'liked'].forEach(function (propname) {
-            obj[propname] = obj.id + propname + '/index.json';
+            obj[propname] = obj.url + propname + '/index.json';
         });
         return obj;
     }

@@ -25,4 +25,8 @@ node "$DEST_PREFIX/helpers/useradd.js"
 
 
 
+write_default_user_jsonld "$username"
+
+
+
 info "Reset user '$fullname' at $(realpath "$userbasedir")"

@@ -31,6 +31,7 @@ const theCreateAction = {
     "@context": "https://www.w3.org/ns/activitystreams",
     "type": "Create",
     "id": utils.getUserProfileUrl(process.env.username) + 'activities/act-' + process.env.TIMESTAMPSTR + '.create.json',
+    "url": utils.getUserProfileUrl(process.env.username) + 'status/?id=act-' + process.env.TIMESTAMPSTR + '.create.json',
     "published": process.env.action_datetime,
     "to": itemObj.to,
     "actor": itemObj.attributedTo,
