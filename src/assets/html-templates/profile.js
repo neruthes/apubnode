@@ -27,7 +27,7 @@ app.renderAction_Create = function (actionItem) {
         <div class="padbox-h">
             <div class="tla-Create-header tla-ANY-header">
                 <img class="tla-ANY-avatarImg" src="../../userimg/avatar/${actorObj.preferredUsername}.png">
-                <a class="tla-ANY-header--actorAnchor" href="${actorObj.id}">
+                <a class="tla-ANY-header--actorAnchor" href="${actorObj.url}">
                     <span class="tla-ANY-header--actorFullname">${actorObj.name}</span>
                     <span class="tla-ANY-header--actorUsername">(@${actorObj.preferredUsername})</span></a>&nbsp;
                 <span class="tla-ANY-header--actionName">created new ${actionItem.object.type.toLowerCase()}</span>
@@ -39,8 +39,8 @@ app.renderAction_Create = function (actionItem) {
 
             <div class="tla-Create-footer tla-ANY-footer">
                 <time class="tla-ANY-footer--time" datetime="${actionItem.published}">${actionItem.published.replace('T', ' ').slice(0, 19)}</time>
-                <a class="tla-ANY-footer--permalink" href="${actorObj.id}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
-                <a class="tla-ANY-footer--permalink" href="${actorObj.id}activities/${actionItem.id.split('/').reverse()[0]}">JSON-LD</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.url}status/?id=${actionItem.id.split('/').reverse()[0]}">Permalink</a>
+                <a class="tla-ANY-footer--permalink" href="${actorObj.url}activities/${actionItem.id.split('/').reverse()[0]}">JSON-LD</a>
             </div>
         </div>
     </div>`;
@@ -82,8 +82,8 @@ app.profilePageStart = function () {
                 <aside class="profileMajor-username">@${person.preferredUsername}</aside>
                 <p class="profileMajor-summary">${person.summary}</p>
                 <div class="profileMajor-summary">
-                    <a class="profileMajor-smallAnchor" href="${person.id}outbox/index.json">Outbox</a>
-                    <a class="profileMajor-smallAnchor" href="${person.id}Person.json">Person</a>
+                    <a class="profileMajor-smallAnchor" href="${person.url}outbox/index.json">Outbox</a>
+                    <a class="profileMajor-smallAnchor" href="${person.url}Person.json">Person</a>
                 </div>
             </div>
         </div>`;

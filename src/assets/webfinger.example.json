@@ -1,20 +1,23 @@
 {
-    "subject": "acct:neruthes@mypubnode.pages.dev",
+    "subject": "acct:neruthes@mastodon.world",
+    "aliases": [
+        "https://mastodon.world/@neruthes",
+        "https://mastodon.world/users/neruthes"
+    ],
     "links": [
         {
             "rel": "http://webfinger.net/rel/profile-page",
             "type": "text/html",
-            "href": "http://mypubnode.pages.dev/u/neruthes/"
-        },
-        {
-            "rel": "self",
-            "type": "application/ld+json",
-            "href": "http://mypubnode.pages.dev/u/neruthes/Person.json"
+            "href": "https://mastodon.world/@neruthes"
         },
         {
             "rel": "self",
             "type": "application/activity+json",
-            "href": "http://mypubnode.pages.dev/u/neruthes/outbox/index.json"
+            "href": "https://mastodon.world/users/neruthes"
+        },
+        {
+            "rel": "http://ostatus.org/schema/1.0/subscribe",
+            "template": "https://mastodon.world/authorize_interaction?uri={uri}"
         }
     ]
 }

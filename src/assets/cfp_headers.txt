@@ -1,8 +1,9 @@
-*/index.json
-    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
+/*/index.json
+    content-type: application/activity+json; charset=utf-8
 
-*/main.json
-    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
+/*/main.json
+    content-type: application/activity+json; charset=utf-8
 
-*/Person.json
-    content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"
+/*/Person.json
+    content-type: application/activity+json; charset=utf-8
+

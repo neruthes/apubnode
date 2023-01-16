@@ -93,11 +93,14 @@ function initialize_userbasedir() {
 # Play with Cloudflare Pages Functions
 #
 function add_webfinger_cfp_func() {
+    ### Install webfinger.js
     source .apubnode/config
     mkdir -p "${fs_prefix}functions/.well-known"
     jspath="${fs_prefix}functions/.well-known/webfinger.js"
     cat $DEST_PREFIX/assets/webfinger.js > "$jspath"
     info "Installed 'webfinger.js' at '$jspath'"
+
+    ### Additionally, overwrite the _routes file
 echo '{
     "version": 1,
     "include": ["/*"],
