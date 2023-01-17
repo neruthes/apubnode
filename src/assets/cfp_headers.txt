@@ -4,6 +4,12 @@
 /*/main.json
     content-type: application/activity+json; charset=utf-8
 
+/*.create.json
+    content-type: application/activity+json; charset=utf-8
+
+/*.note.json
+    content-type: application/activity+json; charset=utf-8
+
 /*/Person.json
     content-type: application/activity+json; charset=utf-8
 
